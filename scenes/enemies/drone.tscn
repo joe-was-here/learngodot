@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bhdpd4lnyrswi" path="res://graphics/enemies/drone.png" id="2_bp56w"]
 
 [node name="Drone" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 15
 script = ExtResource("1_j4ts0")
 
 [node name="Drone" type="Sprite2D" parent="."]
