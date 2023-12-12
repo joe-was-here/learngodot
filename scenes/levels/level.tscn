@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ofk1eq5fn0gm"]
+[gd_scene load_steps=17 format=3 uid="uid://ofk1eq5fn0gm"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_fw8dw"]
 [ext_resource type="Texture2D" uid="uid://c8sp1tqivtl3w" path="res://graphics/ground/stones.png" id="2_ao3ix"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://che646u4gvwjr" path="res://graphics/decals/moss/moss_5.png" id="7_xl3g4"]
 [ext_resource type="Texture2D" uid="uid://bi15j5reb5562" path="res://graphics/tilesets/outside_walls.png" id="8_p8clg"]
 [ext_resource type="Texture2D" uid="uid://dlkbblnc1gra8" path="res://graphics/tilesets/soil.png" id="9_brqse"]
+[ext_resource type="PackedScene" uid="uid://dgolmy50xxhv3" path="res://scenes/objects/steam_vent.tscn" id="10_f4jsr"]
 [ext_resource type="PackedScene" uid="uid://pakldrcuf6dv" path="res://scenes/house.tscn" id="12_xq445"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kshi6"]
@@ -99,6 +100,9 @@ layer_1/tile_data = PackedInt32Array(-4, 131072, 0, -5, 65536, 0, -6, 65536, 0, 
 [node name="Moss4" type="Sprite2D" parent="Ground"]
 position = Vector2(3854, -9)
 texture = ExtResource("6_rfjee")
+
+[node name="SteamVent" parent="Ground" instance=ExtResource("10_f4jsr")]
+position = Vector2(-202, 437)
 
 [node name="Gate" parent="." instance=ExtResource("2_ddnxt")]
 

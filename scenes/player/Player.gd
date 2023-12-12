@@ -26,7 +26,8 @@ func _process(_delta: float) -> void:
     
     var laser_markers = $LaserStartPositions.get_children()
     var selected_laser = laser_markers[randi() % laser_markers.size()]
-  
+    $LaserParticles.global_position = selected_laser.global_position
+    $LaserParticles.emitting = true
     laser.emit(selected_laser.global_position, player_direction)
     
   if Input.is_action_pressed("secondary action") and can_grenade:
