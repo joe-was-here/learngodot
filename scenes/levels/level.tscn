@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ofk1eq5fn0gm"]
+[gd_scene load_steps=18 format=3 uid="uid://ofk1eq5fn0gm"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_fw8dw"]
 [ext_resource type="Texture2D" uid="uid://c8sp1tqivtl3w" path="res://graphics/ground/stones.png" id="2_ao3ix"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bi15j5reb5562" path="res://graphics/tilesets/outside_walls.png" id="8_p8clg"]
 [ext_resource type="Texture2D" uid="uid://dlkbblnc1gra8" path="res://graphics/tilesets/soil.png" id="9_brqse"]
 [ext_resource type="PackedScene" uid="uid://dgolmy50xxhv3" path="res://scenes/objects/steam_vent.tscn" id="10_f4jsr"]
+[ext_resource type="PackedScene" uid="uid://capefrm8qj4ql" path="res://scenes/objects/light_fan_animation.tscn" id="12_jpp4r"]
 [ext_resource type="PackedScene" uid="uid://pakldrcuf6dv" path="res://scenes/house.tscn" id="12_xq445"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kshi6"]
@@ -97,6 +98,10 @@ layer_0/tile_data = PackedInt32Array(-4, 65537, 1, -5, 65537, 1, -131066, 1, 1, 
 layer_1/name = "Walls"
 layer_1/tile_data = PackedInt32Array(-4, 131072, 0, -5, 65536, 0, -6, 65536, 0, -7, 65536, 0, -65530, 65536, 2, -131066, 0, 2, -196602, 0, 2, -65529, 65536, 0, -65528, 65536, 0, -65527, 65536, 0, -65526, 131072, 1, 10, 0, 2, 65546, 0, 2, 131082, 0, 2, 196618, 0, 2, 262154, 0, 2, 327690, 0, 2, 393226, 0, 3, -262138, 0, 2, -327674, 0, 2, -393210, 0, 1)
 
+[node name="House" parent="Ground" instance=ExtResource("12_xq445")]
+position = Vector2(-787, 4828)
+rotation = -2.16072
+
 [node name="Moss4" type="Sprite2D" parent="Ground"]
 position = Vector2(3854, -9)
 texture = ExtResource("6_rfjee")
@@ -104,13 +109,15 @@ texture = ExtResource("6_rfjee")
 [node name="SteamVent" parent="Ground" instance=ExtResource("10_f4jsr")]
 position = Vector2(-202, 437)
 
-[node name="Gate" parent="." instance=ExtResource("2_ddnxt")]
+[node name="LightFanAnimation" parent="Ground" instance=ExtResource("12_jpp4r")]
+position = Vector2(-1565, 1624)
+frame_progress = 0.28826
 
-[node name="House" parent="." instance=ExtResource("12_xq445")]
-position = Vector2(-787, 4828)
-rotation = -2.16072
+[node name="Gate" parent="." instance=ExtResource("2_ddnxt")]
+metadata/_edit_lock_ = true
 
 [node name="Projectiles" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("4_red26")]
 position = Vector2(527, 386)
