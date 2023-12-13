@@ -106,14 +106,14 @@ position = Vector2(-202, 437)
 
 [node name="Gate" parent="." instance=ExtResource("2_ddnxt")]
 
-[node name="Player" parent="." instance=ExtResource("4_red26")]
-position = Vector2(527, 386)
+[node name="House" parent="." instance=ExtResource("12_xq445")]
+position = Vector2(-787, 4828)
+rotation = -2.16072
 
 [node name="Projectiles" type="Node2D" parent="."]
 
-[node name="House" parent="." instance=ExtResource("12_xq445")]
-position = Vector2(-3680, 4193)
-rotation = -2.16072
+[node name="Player" parent="." instance=ExtResource("4_red26")]
+position = Vector2(527, 386)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]

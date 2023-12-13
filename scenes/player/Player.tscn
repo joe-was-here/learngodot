@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cjaiafcyeycpf"]
+[gd_scene load_steps=9 format=3 uid="uid://cjaiafcyeycpf"]
 
 [ext_resource type="Texture2D" uid="uid://b1nj4weoucqgn" path="res://graphics/player/player.png" id="1_3wkxg"]
 [ext_resource type="Script" path="res://scenes/player/Player.gd" id="1_tamkh"]
@@ -24,6 +24,9 @@ scale_min = 0.3
 scale_max = 0.6
 color = Color(0.196078, 0.8, 1, 0.392157)
 color_ramp = SubResource("GradientTexture1D_tusnh")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j24eb"]
+polygon = PackedVector2Array(23, 49.1749, 26, 52.1856, 58, 52.1856, 60, 49.1749, 60, 43.1535, 65, 43.1535, 71, 35.1249, 74, 35.1249, 76, 37.132, 85, 37.132, 85, 33.1178, 88, 32.1142, 93, 32.1142, 95, 28.0999, 97, 23.0821, 97, 13.0464, 95, 7.02498, 90, 5.01784, 86, 8.02855, 87, 3.01071, 83, 1.00357, 76, 1.00357, 72, -4.01427, 60, -5.01784, 52, -12.0428, 44, -11.0393, 39, -11.0393, 32, -19.0678, 26, -26.0928, 18, -29.1035, 12, -31.1106, 7, -39.1392, 9, -40.1427, 5, -45.1606, 0, -50.1784, -8, -60.2141, -16, -63.2248, -21, -61.2177, -26, -59.2105, -31, -60.2141, -38, -62.2213, -44, -60.2141, -47, -56.1998, -52, -59.2105, -60, -55.1963, -65, -51.182, -65, -49.1749, -74, -48.1713, -82, -45.1606, -87, -40.1427, -91, -32.1142, -94, -27.0964, -97, -19.0678, -97, -10.0357, -97, 1.00357, -94, 11.0393, -88, 15.0535, -89, 19.0678, -88, 26.0928, -84, 31.1106, -81, 32.1142, -80, 36.1285, -78, 42.1499, -75, 46.1642, -71, 53.1891, -66, 58.207, -56, 61.2177, -47, 60.2141, -37, 58.207, -24, 54.1927, -14, 47.1677, -5, 45.1606, 3, 42.1499, 7, 40.1427, 24, 41.1463, 21, 44.157, 21, 47.1677)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 31
@@ -68,6 +71,10 @@ process_material = SubResource("ParticleProcessMaterial_jq87r")
 texture = ExtResource("3_bskaj")
 lifetime = 0.2
 one_shot = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+scale = Vector2(1, 0.996444)
+occluder = SubResource("OccluderPolygon2D_j24eb")
 
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
 [connection signal="timeout" from="GrenadeTimer" to="." method="_on_grenade_timer_timeout"]
