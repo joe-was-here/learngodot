@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dexbi85kpcc71"]
+[gd_scene load_steps=4 format=3 uid="uid://dexbi85kpcc71"]
 
 [ext_resource type="Texture2D" uid="uid://dgvc7cotqd6t3" path="res://graphics/objects/Box.png" id="1_d0g6c"]
+[ext_resource type="Script" path="res://scenes/objects/item_container.gd" id="1_mlnca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4x8fm"]
 size = Vector2(354, 258)
@@ -8,6 +9,7 @@ size = Vector2(354, 258)
 [node name="Box" type="StaticBody2D"]
 collision_layer = 4
 collision_mask = 11
+script = ExtResource("1_mlnca")
 
 [node name="BoxImage" type="Sprite2D" parent="."]
 position = Vector2(567, 337)
