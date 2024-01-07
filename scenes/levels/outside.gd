@@ -6,7 +6,7 @@ extends LevelParent
 func _on_gate_player_entered_gate() -> void:
   var tween = create_tween()
   tween.tween_property($Player, "speed", 0, 0.5)
-  get_tree().change_scene_to_packed(inside_scene)
+  get_tree().change_scene_to_packed(inside_level)
 
 func _on_house_player_entered() -> void:
   var tween = get_tree().create_tween()

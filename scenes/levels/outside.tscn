@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/levels/outside.gd" id="2_5agd7"]
 [ext_resource type="PackedScene" uid="uid://b3mfeggj6c16o" path="res://scenes/objects/gate.tscn" id="2_s6d1r"]
 [ext_resource type="Texture2D" uid="uid://c8sp1tqivtl3w" path="res://graphics/ground/stones.png" id="3_nq4ww"]
-[ext_resource type="PackedScene" uid="uid://bw6fcoexmebgy" path="res://scenes/levels/inside.tscn" id="3_xtn4i"]
+[ext_resource type="PackedScene" uid="uid://bw6fcoexmebgy" path="res://scenes/levels/inside.tscn" id="3_q17tv"]
 [ext_resource type="Texture2D" uid="uid://uwwaqt6f6hos" path="res://graphics/decals/dirt_patch.png" id="4_l3ppc"]
 [ext_resource type="Texture2D" uid="uid://deg6c6dfmwyic" path="res://graphics/decals/moss/moss_2.png" id="5_6lkkj"]
 [ext_resource type="Texture2D" uid="uid://bal72yk2w2q75" path="res://graphics/decals/moss/moss_3.png" id="6_dfbdn"]
@@ -52,7 +52,7 @@ sources/1 = SubResource("TileSetAtlasSource_xa4qo")
 
 [node name="Outside" instance=ExtResource("1_ps5vm")]
 script = ExtResource("2_5agd7")
-inside_scene = ExtResource("3_xtn4i")
+inside_level = ExtResource("3_q17tv")
 
 [node name="Soil" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
