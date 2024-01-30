@@ -1,6 +1,7 @@
 extends StaticBody2D
 class_name ItemContainer
 
+@onready var current_direction: Vector2 = Vector2.DOWN.rotated(rotation)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

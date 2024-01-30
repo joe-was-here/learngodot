@@ -1,10 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://bgahchdc65w6k"]
+[gd_scene load_steps=22 format=3 uid="uid://bgahchdc65w6k"]
 
 [ext_resource type="PackedScene" uid="uid://ofk1eq5fn0gm" path="res://scenes/levels/level.tscn" id="1_ps5vm"]
 [ext_resource type="Script" path="res://scenes/levels/outside.gd" id="2_5agd7"]
 [ext_resource type="PackedScene" uid="uid://b3mfeggj6c16o" path="res://scenes/objects/gate.tscn" id="2_s6d1r"]
+[ext_resource type="PackedScene" uid="uid://bw6fcoexmebgy" path="res://scenes/levels/inside.tscn" id="3_6uo2o"]
 [ext_resource type="Texture2D" uid="uid://c8sp1tqivtl3w" path="res://graphics/ground/stones.png" id="3_nq4ww"]
-[ext_resource type="PackedScene" uid="uid://bw6fcoexmebgy" path="res://scenes/levels/inside.tscn" id="3_q17tv"]
 [ext_resource type="Texture2D" uid="uid://uwwaqt6f6hos" path="res://graphics/decals/dirt_patch.png" id="4_l3ppc"]
 [ext_resource type="Texture2D" uid="uid://deg6c6dfmwyic" path="res://graphics/decals/moss/moss_2.png" id="5_6lkkj"]
 [ext_resource type="Texture2D" uid="uid://bal72yk2w2q75" path="res://graphics/decals/moss/moss_3.png" id="6_dfbdn"]
@@ -15,6 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://pakldrcuf6dv" path="res://scenes/house.tscn" id="11_epu76"]
 [ext_resource type="PackedScene" uid="uid://dgolmy50xxhv3" path="res://scenes/objects/steam_vent.tscn" id="12_5q264"]
 [ext_resource type="PackedScene" uid="uid://capefrm8qj4ql" path="res://scenes/objects/light_fan_animation.tscn" id="13_vpq7h"]
+[ext_resource type="PackedScene" uid="uid://co2wa2ral3o64" path="res://scenes/objects/item.tscn" id="16_21pvq"]
+[ext_resource type="PackedScene" uid="uid://k367qfq2622q" path="res://scenes/objects/toilet.tscn" id="17_2oila"]
+[ext_resource type="PackedScene" uid="uid://cvlr272na5ol1" path="res://scenes/objects/crate.tscn" id="18_akce0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kshi6"]
 resource_name = "walls"
@@ -52,7 +55,7 @@ sources/1 = SubResource("TileSetAtlasSource_xa4qo")
 
 [node name="Outside" instance=ExtResource("1_ps5vm")]
 script = ExtResource("2_5agd7")
-inside_level = ExtResource("3_q17tv")
+inside_level = ExtResource("3_6uo2o")
 
 [node name="Soil" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
@@ -114,6 +117,15 @@ position = Vector2(-1565, 1624)
 frame_progress = 0.28826
 
 [node name="Gate" parent="." index="1" instance=ExtResource("2_s6d1r")]
+
+[node name="Item" parent="." index="6" instance=ExtResource("16_21pvq")]
+position = Vector2(0, 523)
+
+[node name="Toilet" parent="." index="7" instance=ExtResource("17_2oila")]
+position = Vector2(1174, 850)
+
+[node name="Crate" parent="." index="8" instance=ExtResource("18_akce0")]
+position = Vector2(1297, 428)
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
