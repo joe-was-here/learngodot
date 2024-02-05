@@ -20,3 +20,5 @@ shape = SubResource("CircleShape2D_056rx")
 [node name="LidSprite" parent="." index="2"]
 position = Vector2(0, 21)
 texture = ExtResource("4_mue56")
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPositions" index="0"]
