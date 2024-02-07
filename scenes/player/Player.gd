@@ -9,6 +9,9 @@ signal grenade(position, direction)
 @export var max_speed: int = 500
 var speed: int = max_speed
 
+func hit():
+  print("player hit")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
   pass # Replace with function body.
@@ -18,6 +21,7 @@ func _process(_delta: float) -> void:
   var direction = Input.get_vector("left", "right", "up", "down")
   velocity = direction * speed
   move_and_slide()
+  Globals.player_pos = global_position
   
   look_at(get_global_mouse_position())
   var player_direction = (get_global_mouse_position() - position).normalized()
