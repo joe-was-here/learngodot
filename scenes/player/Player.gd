@@ -10,7 +10,7 @@ signal grenade(position, direction)
 var speed: int = max_speed
 
 func hit():
-  print("player hit")
+  Globals.health -= 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -47,10 +47,8 @@ func _process(_delta: float) -> void:
     
     grenade.emit(selected_grenade.global_position, player_direction)
 
-
 func _on_grenade_timer_timeout() -> void:
   can_grenade = true
-
 
 func _on_laser_timer_timeout() -> void:
   can_laser = true
